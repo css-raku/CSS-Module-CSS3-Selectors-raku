@@ -5,7 +5,7 @@
     "depends"     : [ "CSS::Grammar", "JSON::Tiny"  ],
     "source-url"  : "git://github.com/p6-css/perl6-CSS3-Selectors.git",
     "provides"    : {
-        "CSS3::Selectors" : "lib/CSS3/Selectors.pm"
+        "CSS3::Selectors" : "lib/CSS3/Selectors.pm",
         "CSS3::Selectors::Actions" : "lib/CSS3/Selectors/Actions.pm"
      }
 }
