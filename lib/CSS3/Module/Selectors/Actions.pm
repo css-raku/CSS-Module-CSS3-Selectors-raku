@@ -1,7 +1,7 @@
 use v6;
 use CSS::Grammar::Actions;
 
-class CSS3::Selectors::Actions
+class CSS3::Module::Selectors::Actions
     is CSS::Grammar::Actions {
 
     use CSS::Grammar::AST :CSSValue;

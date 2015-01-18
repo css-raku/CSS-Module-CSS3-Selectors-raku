@@ -1,5 +1,5 @@
-# perl6-CSS3-Selectors
-This module extends CSS::Grammar::CSS3, implementing [CSS Selectors Module Level 3](http://www.w3.org/TR/2011/REC-css3-selectors-20110929/). It provides grammar `CSS3::Selectors` and actions class `CSS::Selectors::Actions`.
+# perl6-CSS3-Module-Selectors
+This module extends CSS::Grammar::CSS3, implementing [CSS Selectors Module Level 3](http://www.w3.org/TR/2011/REC-css3-selectors-20110929/). It provides grammar `CSS3::Module::Selectors` and actions class `CSS::Module::Selectors::Actions`.
 
 Some of the key extensions are:
 

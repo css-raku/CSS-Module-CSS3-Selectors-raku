@@ -7,7 +7,7 @@ use v6;
 #    and supported  by major browsers.
 
 use CSS::Grammar::CSS3;
-grammar CSS3::Selectors:ver<20110929.000>
+grammar CSS3::Module::Selectors:ver<20110929.000>
     is CSS::Grammar::CSS3 {
 
     # extensions:
