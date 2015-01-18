@@ -36,3 +36,4 @@
 [ "simple-selector", { "input" : "tr:nth-child( +6 )", "ast" : { "simple-selector" : [ { "qname" : { "element-name" : "tr" } }, { "pseudo-func" : { "ident" : "nth-child", "expr" : [ { "op" : "+" }, { "int:b" : 6 } ] } } ] } } ]
 //  white-space - invalid
 [ "selector", { "input" : "tr:nth-child(+ 2n)", "warnings" : "usage nth-child(an[+/-b]|odd|even) e.g. \"4\" \"3n+1\"", "ast" : null } ]
+[ "simple-selector", { "input" : ":eq(0)", "ast" : { "simple-selector" : [ { "pseudo-func" : { "ident" : "eq", "expr" : [ { "num" : 0 } ] } } ] } } ]
