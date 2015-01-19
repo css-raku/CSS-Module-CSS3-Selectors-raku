@@ -3,11 +3,10 @@
 use Test;
 use JSON::Tiny;
 
-use CSS3::Module::Selectors;
-use CSS3::Module::Selectors::Actions;
+use CSS::Module::CSS3::Selectors;
 use CSS::Grammar::Test;
 
-my $actions = CSS3::Module::Selectors::Actions.new;
+my $actions = CSS::Module::CSS3::Selectors::Actions.new;
 
 for ( 't/00basic.json'.IO.lines ) {
     next 
@@ -16,7 +15,7 @@ for ( 't/00basic.json'.IO.lines ) {
     my ($rule, $expected) = @( from-json($_) );
     my $input = $expected<input>;
 
-    CSS::Grammar::Test::parse-tests(CSS3::Module::Selectors, $input,
+    CSS::Grammar::Test::parse-tests(CSS::Module::CSS3::Selectors, $input,
 				    :$rule,
 				    :$actions,
 				    :suite<css3x-selectors>,
