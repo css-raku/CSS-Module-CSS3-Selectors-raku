@@ -34,16 +34,6 @@ grammar CSS::Module::CSS3::Selectors:ver<20110929.000>
 
     rule term:sym<unicode-range> {:i<unicode-range>}
 
-    # to compute a.n + b
-    proto rule AnB-expr {*}
-    rule AnB-expr:sym<keyw> {:i [ odd | even ] & <keyw=.Ident> }
-    token sign { <[ \+ \- ]> }
-    rule AnB-expr:sym<expr> {:i
-        [  <op=.sign>?$<int:a>=<.uint>?<op(rx:i/n/)> [<op=.sign> $<int:b>=<.uint>]?
-        || <op=.sign>?$<int:b>=<.uint>
-        ]
-    }
-
     rule structural-selector {:i $<Ident>=[[nth|first|last|nth\-last]\-[child|of\-type]]'(' [ <expr=.AnB-expr> || <any-args> ] ')'}
     rule pseudo-function:sym<structural-selector> {<structural-selector>}
     rule negation-expr {[<qname> | <universal> | <id> | <class> | <attrib> | [$<nested>=<?before [:i':not(']> || <?>] <pseudo> | <any-arg> ]+}
@@ -75,10 +65,6 @@ class CSS::Module::CSS3::Selectors::Actions
         make $.token( %node, :type(CSS::Grammar::AST::CSSSelector::PseudoFunction));
     }
     method pseudo-function:sym<structural-selector>($/)  { make $<structural-selector>.ast }
-
-    method sign($/) {make ~$/ }
-    method AnB-expr:sym<keyw>($/) { make [ $.token( $<keyw>.ast, :type(CSSValue::KeywordComponent)) ] }
-    method AnB-expr:sym<expr>($/) { make $.list($/) }
 
     method negation-expr($/) {
         return $.warning('bad :not() argument', ~$<any-arg>)
