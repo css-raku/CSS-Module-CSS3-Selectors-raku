@@ -34,11 +34,6 @@ grammar CSS::Module::CSS3::Selectors:ver<20110929.000>
 
     rule term:sym<unicode-range> {:i<unicode-range>}
 
-    # inherited from base: = ~= |=
-    rule attribute-selector:sym<prefix>    {'^='}
-    rule attribute-selector:sym<suffix>    {'$='}
-    rule attribute-selector:sym<substring> {'*='}
-
     # to compute a.n + b
     proto rule AnB-expr {*}
     rule AnB-expr:sym<keyw> {:i [ odd | even ] & <keyw=.Ident> }
@@ -67,10 +62,6 @@ class CSS::Module::CSS3::Selectors::Actions
     method wildcard($/)         { make ~$/ }
     method qname($/)            { make $.token( $.node($/), :type(CSSValue::QnameComponent)) }
     method universal($/)        { make $.token( $.node($/), :type(CSSValue::QnameComponent)) }
-
-    method attribute-selector:sym<prefix>($/)    { make ~$/ }
-    method attribute-selector:sym<suffix>($/)    { make ~$/ }
-    method attribute-selector:sym<substring>($/) { make ~$/ }
 
     method term:sym<unicode-range>($/) { make $.node($/, :type(CSSValue::UnicodeRangeComponent)) }
     method structural-selector($/)  {
