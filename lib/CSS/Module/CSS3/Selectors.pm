@@ -32,8 +32,6 @@ grammar CSS::Module::CSS3::Selectors:ver<20110929.000>
 
     rule attrib    {'[' <Ident> [ <op=.attribute-selector> [<Ident>|<string>] ]? ']'}
 
-    rule term:sym<unicode-range> {:i<unicode-range>}
-
     rule structural-selector {:i $<Ident>=[[nth|first|last|nth\-last]\-[child|of\-type]]'(' [ <expr=.AnB-expr> || <any-args> ] ')'}
     rule pseudo-function:sym<structural-selector> {<structural-selector>}
     rule negation-expr {[<qname> | <universal> | <id> | <class> | <attrib> | [$<nested>=<?before [:i':not(']> || <?>] <pseudo> | <any-arg> ]+}
@@ -53,7 +51,6 @@ class CSS::Module::CSS3::Selectors::Actions
     method qname($/)            { make $.token( $.node($/), :type(CSSValue::QnameComponent)) }
     method universal($/)        { make $.token( $.node($/), :type(CSSValue::QnameComponent)) }
 
-    method term:sym<unicode-range>($/) { make $.node($/, :type(CSSValue::UnicodeRangeComponent)) }
     method structural-selector($/)  {
         my $ident = $<Ident>.lc;
         return $.warning('usage '~$ident~'(an[+/-b]|odd|even) e.g. "4" "3n+1"')
