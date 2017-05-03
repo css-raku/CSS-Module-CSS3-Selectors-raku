@@ -7,7 +7,7 @@
     "auth"        : "github:p6-css",
     "description" : "CSS3 Module Level 3 Selectors",
     "depends"     : [ "CSS::Grammar", "JSON::Fast" ],
-    "source-url"  : "git://github.com/p6-css/perl6-CSS-Module-CSS3-Selectors.git",
+    "source-url"  : "git://github.com/p6-css/CSS-Module-CSS3-Selectors-p6.git",
     "provides"    : {
         "CSS::Module::CSS3::Selectors" : "lib/CSS/Module/CSS3/Selectors.pm",
         "CSS::Module::CSS3::Selectors::Actions" : "lib/CSS/Module/CSS3/Selectors/Actions.pm"
