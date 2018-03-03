@@ -4,5 +4,5 @@ perl6:
   - latest
   - 2017.08
 install:
-  - rakudobrew build-panda
+  - rakudobrew build zef
   - zef --depsonly install .
