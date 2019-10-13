@@ -36,7 +36,7 @@ class CSS::Module::CSS3::Selectors::Actions
     method pseudo-function:sym<negation>($/) {
         return $.warning('missing/incorrect arguments to :not()', ~$<any-args>)
             if $<any-args>;
-        return unless $<negation-expr>.ast;
-        make $.pseudo-func('not', $<negation-expr>.ast);
+        make $.pseudo-func('not', .ast)
+            with $<negation-expr>;
     }
 }

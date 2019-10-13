@@ -6,13 +6,12 @@ use CSS::Module::CSS3::Selectors;
 use CSS::Module::CSS3::Selectors::Actions;
 use CSS::Grammar::Test;
 
-lives-ok {require CSS::Grammar:ver(v0.3.0..*) }, "CSS::Grammar version";
-my $actions = CSS::Module::CSS3::Selectors::Actions.new;
+lives-ok {require CSS::Grammar:ver(v0.3.3+) }, "CSS::Grammar version";
+my $actions = CSS::Module::CSS3::Selectors::Actions.new: :xml;
 
 for ( 't/00basic.json'.IO.lines ) {
     next 
         if .substr(0,2) eq '//';
-
     my ($rule, $expected) = @( from-json($_) );
     my $input = $expected<input>;
 

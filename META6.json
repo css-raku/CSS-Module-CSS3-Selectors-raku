@@ -1,12 +1,12 @@
 {
     "perl"        : "6.*",
     "name"        : "CSS::Module::CSS3::Selectors",
-    "version"     : "0.0.1",
+    "version"     : "0.0.2",
     "license"     : "Artistic-2.0",
     "api"         : "css3-selectors-20110929",
     "auth"        : "github:p6-css",
     "description" : "CSS3 Module Level 3 Selectors",
-    "depends"     : [ "CSS::Grammar", "JSON::Fast" ],
+    "depends"     : [ "CSS::Grammar:ver<0.3.3+>", "JSON::Fast" ],
     "source-url"  : "git://github.com/p6-css/CSS-Module-CSS3-Selectors-p6.git",
     "provides"    : {
         "CSS::Module::CSS3::Selectors" : "lib/CSS/Module/CSS3/Selectors.pm",

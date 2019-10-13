@@ -8,7 +8,7 @@ use v6;
 
 use CSS::Grammar::CSS3;
 
-grammar CSS::Module::CSS3::Selectors #:api<css3-selectors-20110929>
+grammar CSS::Module::CSS3::Selectors:ver<0.0.2>:api<css3-selectors-20110929>
     is CSS::Grammar::CSS3 {
 
     # extensions:
@@ -18,7 +18,7 @@ grammar CSS::Module::CSS3::Selectors #:api<css3-selectors-20110929>
 
     rule no-namespace {<?>}
     rule wildcard {'*'}
-    rule namespace-prefix {[<prefix=.Ident>|<prefix=.wildcard>|<prefix=.no-namespace>]'|'}
+    rule namespace-prefix {[<prefix=.Id>|<prefix=.wildcard>|<prefix=.no-namespace>]'|'}
 
     # use <qname> in preference to <type_selector>
     # - see http://www.w3.org/TR/2008/CR-css3-namespace-20080523/#css-qnames
