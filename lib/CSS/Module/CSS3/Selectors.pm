@@ -27,8 +27,6 @@ grammar CSS::Module::CSS3::Selectors:ver<0.0.2>:api<css3-selectors-20110929>
     rule simple-selector { [<qname><!before '|'> | <universal>][<id> | <class> | <attrib> | <pseudo>]*
                          | [<id>|<class>|<attrib>|<pseudo>]+ }
 
-    rule attrib    {'[' <Ident> [ <op=.attribute-selector> [<Ident>|<string>] ]? ']'}
-
     rule structural-selector {:i $<Ident>=[[nth|first|last|nth\-last]\-[child|of\-type]]'(' [ <expr=.AnB-expr> || <any-args> ] ')'}
     rule pseudo-function:sym<structural-selector> {<structural-selector>}
     rule negation-expr {[<qname> | <universal> | <id> | <class> | <attrib> | [$<nested>=<?before [:i':not(']> || <?>] <pseudo> | <any-arg> ]+}
