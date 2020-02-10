@@ -1,4 +1,5 @@
+0.0.3 2020-02-11
+- Rename sources *.pm -> *.rakumod
 0.0.2 2019-10-14
 - Make namespace-prefixes case insensistive
-
 0.0.1 initial release
