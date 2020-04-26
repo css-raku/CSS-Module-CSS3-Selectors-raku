@@ -13,6 +13,6 @@
     "CSS::Module::CSS3::Selectors": "lib/CSS/Module/CSS3/Selectors.rakumod",
     "CSS::Module::CSS3::Selectors::Actions": "lib/CSS/Module/CSS3/Selectors/Actions.rakumod"
   },
-  "source-url": "git://github.com/p6-css/CSS-Module-CSS3-Selectors-p6.git",
+  "source-url": "git://github.com/css-raku/CSS-Module-CSS3-Selectors-raku.git",
   "version": "0.0.3"
 }

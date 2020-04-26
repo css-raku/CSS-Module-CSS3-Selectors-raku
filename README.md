@@ -1,4 +1,4 @@
-# perl6-CSS-Module-CSS3-Selectors
+# CSS-Module-CSS3-Selectors-raku
 This module extends CSS::Grammar::CSS3, to implment parsing for [CSS Selectors Module Level 3](http://www.w3.org/TR/2011/REC-css3-selectors-20110929/). It provides grammar `CSS::Module::CSS3::Selectors` and actions class `CSS::Module::CSS3::Selectors::Actions`.
 
 ## Example
@@ -19,5 +19,5 @@ Some of the key extensions are:
 
 ## See Also
 
-- [CSS::Grammar](https://github.com/p6-css/perl6-CSS-Grammar) - base grammars
-- [CSS::Module](https://github.com/p6-css/perl6-CSS-Module) - property specific grammars
+- [CSS::Grammar](https://github.com/css-raku/CSS-Grammar-raku) - base grammars
+- [CSS::Module](https://github.com/css-raku/CSS-Module-raku) - property specific grammars
