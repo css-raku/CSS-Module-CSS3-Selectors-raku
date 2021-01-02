@@ -2,7 +2,7 @@
   "api": "css3-selectors-20110929",
   "auth": "github:p6-css",
   "depends": [
-    "CSS::Grammar:ver<0.3.3+>",
+    "CSS::Grammar:ver<0.3.4+>",
     "JSON::Fast"
   ],
   "description": "CSS3 Module Level 3 Selectors",
