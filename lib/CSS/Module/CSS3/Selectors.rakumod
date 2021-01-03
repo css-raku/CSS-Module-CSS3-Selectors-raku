@@ -8,7 +8,7 @@ use v6;
 
 use CSS::Grammar::CSS3;
 
-grammar CSS::Module::CSS3::Selectors:ver<0.0.3>:api<css3-selectors-20110929>
+grammar CSS::Module::CSS3::Selectors:ver<0.0.4>
     is CSS::Grammar::CSS3 {
 
     # extensions:

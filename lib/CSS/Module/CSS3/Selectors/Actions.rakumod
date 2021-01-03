@@ -3,7 +3,7 @@ use CSS::Grammar::Actions;
 class CSS::Module::CSS3::Selectors::Actions
     is CSS::Grammar::Actions {
 
-    use CSS::Grammar::AST :CSSValue;
+    use CSS::Grammar::Defs :CSSValue;
 
     method combinator:sym<sibling>($/)  { make '~' }
 
@@ -21,7 +21,7 @@ class CSS::Module::CSS3::Selectors::Actions
         my %node = %( $.node($/) );
         %node<ident> = $ident;
 
-        make $.token( %node, :type(CSS::Grammar::AST::CSSSelector::PseudoFunction));
+        make $.token( %node, :type(CSS::Grammar::Defs::CSSSelector::PseudoFunction));
     }
     method pseudo-function:sym<structural-selector>($/)  { make $<structural-selector>.ast }
 
