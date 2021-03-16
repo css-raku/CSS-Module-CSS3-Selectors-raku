@@ -1,6 +1,10 @@
 {
-  "api": "css3-selectors-20110929",
   "auth": "github:p6-css",
+  "authors": [
+    "David Warring"
+  ],
+  "build-depends": [
+  ],
   "depends": [
     "CSS::Grammar:ver<0.3.5+>",
     "JSON::Fast"
@@ -13,6 +17,12 @@
     "CSS::Module::CSS3::Selectors": "lib/CSS/Module/CSS3/Selectors.rakumod",
     "CSS::Module::CSS3::Selectors::Actions": "lib/CSS/Module/CSS3/Selectors/Actions.rakumod"
   },
+  "resources": [
+  ],
   "source-url": "git://github.com/css-raku/CSS-Module-CSS3-Selectors-raku.git",
+  "tags": [
+  ],
+  "test-depends": [
+  ],
   "version": "0.0.4"
 }

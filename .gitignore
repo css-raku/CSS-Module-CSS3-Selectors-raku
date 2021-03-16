@@ -1,6 +1,9 @@
-lib/.precomp
-/blib/
-/Makefile
-*.o
 *~
-#*
+.*
+*.o
+Makefile
+blib/
+README.md
+*.gz
+CSS-Module-CSS3-Selectors*
+.gitignore
