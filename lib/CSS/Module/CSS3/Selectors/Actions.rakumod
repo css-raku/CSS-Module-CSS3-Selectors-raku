@@ -7,21 +7,21 @@ class CSS::Module::CSS3::Selectors::Actions
 
     method combinator:sym<sibling>($/)  { make '~' }
 
-    method no-namespace($/)     { make $.token('', :type(CSSValue::ElementNameComponent)) }
-    method namespace-prefix($/) { make $.token( $<prefix>.ast, :type(CSSValue::NamespacePrefixComponent)) }
+    method no-namespace($/)     { make $.build.token('', :type(CSSValue::ElementNameComponent)) }
+    method namespace-prefix($/) { make $.build.token( $<prefix>.ast, :type(CSSValue::NamespacePrefixComponent)) }
     method wildcard($/)         { make ~$/ }
-    method qname($/)            { make $.token( $.node($/), :type(CSSValue::QnameComponent)) }
-    method universal($/)        { make $.token( $.node($/), :type(CSSValue::QnameComponent)) }
+    method qname($/)            { make $.build.token( $.build.node($/), :type(CSSValue::QnameComponent)) }
+    method universal($/)        { make $.build.token( $.build.node($/), :type(CSSValue::QnameComponent)) }
 
     method structural-selector($/)  {
         my $ident = $<Ident>.lc;
         return $.warning('usage '~$ident~'(an[+/-b]|odd|even) e.g. "4" "3n+1"')
             if $<any-args>;
 
-        my %node = %( $.node($/) );
+        my %node = %( $.build.node($/) );
         %node<ident> = $ident;
 
-        make $.token( %node, :type(CSS::Grammar::Defs::CSSSelector::PseudoFunction));
+        make $.build.token( %node, :type(CSS::Grammar::Defs::CSSSelector::PseudoFunction));
     }
     method pseudo-function:sym<structural-selector>($/)  { make $<structural-selector>.ast }
 
@@ -30,13 +30,13 @@ class CSS::Module::CSS3::Selectors::Actions
             if $<any-arg>;
         return $.warning('illegal nested negation', ~$<pseudo>)
             if $<nested>;
-        make $.list($/);
+        make $.build.list($/);
     }
 
     method pseudo-function:sym<negation>($/) {
         return $.warning('missing/incorrect arguments to :not()', ~$<any-args>)
             if $<any-args>;
-        make $.pseudo-func('not', .ast)
+        make $.build.pseudo-func('not', $_)
             with $<negation-expr>;
     }
 }
