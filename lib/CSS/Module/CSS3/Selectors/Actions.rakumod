@@ -3,7 +3,7 @@ use CSS::Grammar::Actions;
 class CSS::Module::CSS3::Selectors::Actions
     is CSS::Grammar::Actions {
 
-    use CSS::Grammar::Defs :CSSValue;
+    use CSS::Grammar::Defs :CSSValue, :CSSSelector;
 
     method combinator:sym<sibling>($/)  { make '~' }
 
@@ -18,10 +18,9 @@ class CSS::Module::CSS3::Selectors::Actions
         return $.warning('usage '~$ident~'(an[+/-b]|odd|even) e.g. "4" "3n+1"')
             if $<any-args>;
 
-        my %node = %( $.build.node($/) );
-        %node<ident> = $ident;
+        my %node = %( $.build.node($/).Slip, :$ident );
 
-        make $.build.token( %node, :type(CSS::Grammar::Defs::CSSSelector::PseudoFunction));
+        make $.build.token( %node, :type(CSSSelector::PseudoFunction));
     }
     method pseudo-function:sym<structural-selector>($/)  { make $<structural-selector>.ast }
 
