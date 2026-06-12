@@ -9,7 +9,7 @@
     "CSS::Grammar:ver<0.3.9+>",
     "JSON::Fast"
   ],
-  "description": "CSS3 Module Level 3 Selectors",
+  "description": "CSS3 Level 3 Selectors",
   "license": "Artistic-2.0",
   "name": "CSS::Module::CSS3::Selectors",
   "perl": "6.*",
@@ -23,6 +23,7 @@
   "tags": [
   ],
   "test-depends": [
+      "CSS::Writer:ver:<0.2.15+>"
   ],
   "version": "0.0.6"
 }

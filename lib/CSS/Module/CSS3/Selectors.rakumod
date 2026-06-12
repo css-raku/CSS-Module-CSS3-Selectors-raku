@@ -6,10 +6,10 @@ use v6;
 # -- have relaxed negation rule to take a list of arguments - in common use
 #    and supported  by major browsers.
 
-use CSS::Grammar::CSS3;
+grammar CSS::Module::CSS3::Selectors:ver<0.0.6> {
 
-grammar CSS::Module::CSS3::Selectors:ver<0.0.6>
-    is CSS::Grammar::CSS3 {
+    use CSS::Grammar::CSS3;
+    also is CSS::Grammar::CSS3;
 
     # extensions:
     # ----------
