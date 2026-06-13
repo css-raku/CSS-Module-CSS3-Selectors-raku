@@ -9,11 +9,13 @@
               "CSS::Grammar:ver<0.3.9+>",
               "JSON::Fast"
           ]
+      },
+      "test" : {
+          "requires": [
+              "CSS::Writer:ver:<0.2.15+>"
+          ]
       }
   },
-  "test-depends" : [
-      "CSS::Writer:ver:<0.2.15+>"
-  ],
   "description": "CSS3 Level 3 Selectors",
   "license": "Artistic-2.0",
   "name": "CSS::Module::CSS3::Selectors",
