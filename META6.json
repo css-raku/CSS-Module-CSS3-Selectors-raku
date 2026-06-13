@@ -6,13 +6,13 @@
   "depends": {
       "runtime" : {
           "requires": [
-              "CSS::Grammar:ver<0.3.9+>",
+              "CSS::Grammar:ver<0.4.3+>",
               "JSON::Fast"
           ]
       },
       "test" : {
           "requires": [
-              "CSS::Writer:ver<0.2.15+>"
+              "CSS::Writer:ver<0.3.0+>"
           ]
       }
   },

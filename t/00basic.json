@@ -38,5 +38,5 @@
 [ "selector", { "input" : "tr:nth-child(+ 2n)", "warnings" : "usage nth-child(an[+/-b]|odd|even) e.g. \"4\" \"3n+1\"", "ast" : null } ]
 [ "simple-selector", { "input" : ":eq(0)", "ast" : { "simple-selector" : [ { "pseudo-func" : { "ident" : "eq", "expr" : [ { "num" : 0 } ] } } ] } } ]
 // unicode
-[ "simple-selector", { "input" : "汉", "ast" : { "simple-selector" : [ { "qname" : { "element-name" : "汉" } } ] }, "writer-todo" : "avoid unicode escaping" } ]
-[ "simple-selector", { "input" : "Café", "ast" : { "simple-selector" : [ { "qname" : { "element-name" : "Café" } } ] }, "writer-todo" : "avoid unicode escaping" } ]
+[ "simple-selector", { "input" : "汉", "ast" : { "simple-selector" : [ { "qname" : { "element-name" : "汉" } } ] } } ]
+[ "simple-selector", { "input" : "Café", "ast" : { "simple-selector" : [ { "qname" : { "element-name" : "Café" } } ] } } ]

@@ -18,7 +18,6 @@ for ( 't/00basic.json'.IO.lines ) {
     my ($rule, $expected) = @( from-json($_) );
     my $input = $expected<input>;
     with $expected<ast> -> $ast {
-        todo $_ with $expected<writer-todo>;
         my $xml-output = $expected<xml> // $input;
         is $xml-writer.write($ast), $xml-output, $input.raku ~ "xml output";
         with $expected<html> -> $html-output  {

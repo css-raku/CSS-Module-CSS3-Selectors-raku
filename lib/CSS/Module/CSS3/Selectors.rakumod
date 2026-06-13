@@ -6,29 +6,29 @@ use v6;
 # -- have relaxed negation rule to take a list of arguments - in common use
 #    and supported  by major browsers.
 
-grammar CSS::Module::CSS3::Selectors:ver<0.0.6> {
+unit grammar CSS::Module::CSS3::Selectors:ver<0.0.6>;
 
-    use CSS::Grammar::CSS3;
-    also is CSS::Grammar::CSS3;
+use CSS::Grammar::CSS3;
+also is CSS::Grammar::CSS3;
 
-    # extensions:
-    # ----------
-    # inherited combinators: '+' (adjacent), '>' (child)
-    rule combinator:sym<sibling> { '~' }
+# extensions:
+# ----------
+# inherited combinators: '+' (adjacent), '>' (child)
+rule combinator:sym<sibling> { '~' }
 
-    rule no-namespace {<?>}
-    rule wildcard {'*'}
-    rule namespace-prefix {[<prefix=.Id>|<prefix=.wildcard>|<prefix=.no-namespace>]'|'}
+rule no-namespace {<?>}
+rule wildcard {'*'}
+rule namespace-prefix {[<prefix=.Id>|<prefix=.wildcard>|<prefix=.no-namespace>]'|'}
 
-    # use <qname> in preference to <type_selector>
-    # - see http://www.w3.org/TR/2008/CR-css3-namespace-20080523/#css-qnames
-    rule qname     {<namespace-prefix>? <element-name>}
-    rule universal {<namespace-prefix>? <element-name=.wildcard>}
-    rule simple-selector { [<qname><!before '|'> | <universal>][<id> | <class> | <attrib> | <pseudo>]*
-                         | [<id>|<class>|<attrib>|<pseudo>]+ }
+# use <qname> in preference to <type_selector>
+# - see http://www.w3.org/TR/2008/CR-css3-namespace-20080523/#css-qnames
+rule qname     {<namespace-prefix>? <element-name>}
+rule universal {<namespace-prefix>? <element-name=.wildcard>}
+rule simple-selector { [<qname><!before '|'> | <universal>][<id> | <class> | <attrib> | <pseudo>]*
+                     | [<id>|<class>|<attrib>|<pseudo>]+ }
 
-    rule structural-selector {:i $<Ident>=[[nth|first|last|nth\-last]\-[child|of\-type]]'(' [ <expr=.AnB-expr> || <any-args> ] ')'}
-    rule pseudo-function:sym<structural-selector> {<structural-selector>}
-    rule negation-expr {[<qname> | <universal> | <id> | <class> | <attrib> | [$<nested>=<?before [:i':not(']> || <?>] <pseudo> | <any-arg> ]+}
-    rule pseudo-function:sym<negation>  {:i'not(' [ <negation-expr> || <any-args> ] ')'}
-}
+rule structural-selector {:i $<Ident>=[[nth|first|last|nth\-last]\-[child|of\-type]]'(' [ <expr=.AnB-expr> || <any-args> ] ')'}
+rule pseudo-function:sym<structural-selector> {<structural-selector>}
+rule negation-expr {[<qname> | <universal> | <id> | <class> | <attrib> | [$<nested>=<?before [:i':not(']> || <?>] <pseudo> | <any-arg> ]+}
+rule pseudo-function:sym<negation>  {:i'not(' [ <negation-expr> || <any-args> ] ')'}
+
