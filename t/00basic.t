@@ -7,7 +7,6 @@ use CSS::Module::CSS3::Selectors::Actions;
 use CSS::Grammar::Test;
 use CSS::Writer;
 
-lives-ok {require CSS::Grammar:ver(v0.3.3+) }, "CSS::Grammar version";
 my $actions = CSS::Module::CSS3::Selectors::Actions.new: :xml;
 my CSS::Writer $xml-writer .= new: :xml;
 my CSS::Writer $html-writer .= new;

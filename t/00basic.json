@@ -35,7 +35,7 @@
 [ "simple-selector", { "input" : "tr:nth-child( -n+ 6 )", "ast" : { "simple-selector" : [ { "qname" : { "element-name" : "tr" } }, { "pseudo-func" : { "ident" : "nth-child", "expr" : [ { "op" : "-" }, { "op" : "n" }, { "op" : "+" }, { "int" : 6 } ] } } ] }, "xml" : "tr:nth-child(-n+6)" } ]
 [ "simple-selector", { "input" : "tr:nth-child( +6 )", "ast" : { "simple-selector" : [ { "qname" : { "element-name" : "tr" } }, { "pseudo-func" : { "ident" : "nth-child", "expr" : [ { "op" : "+" }, { "int" : 6 } ] } } ] }, "xml" : "tr:nth-child(+6)" } ]
 //  white-space - invalid
-[ "selector", { "input" : "tr:nth-child(+ 2n)", "warnings" : "usage nth-child(an[+/-b]|odd|even) e.g. \"4\" \"3n+1\"", "ast" : null } ]
+[ "selector", { "input" : "tr:nth-child(+ 2n)", "warnings" : ["skipping: + 2n", "usage nth-child(an[+/-b]|odd|even) e.g. \"4\" \"3n+1\""], "ast" : null } ]
 [ "simple-selector", { "input" : ":eq(0)", "ast" : { "simple-selector" : [ { "pseudo-func" : { "ident" : "eq", "expr" : [ { "num" : 0 } ] } } ] } } ]
 // unicode
 [ "simple-selector", { "input" : "汉", "ast" : { "simple-selector" : [ { "qname" : { "element-name" : "汉" } } ] } } ]
