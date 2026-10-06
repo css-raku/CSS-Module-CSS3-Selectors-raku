@@ -3,18 +3,20 @@
   "authors": [
     "David Warring"
   ],
+  "build-depends": [
+  ],
   "depends": {
-      "runtime" : {
-          "requires": [
-              "CSS::Grammar:ver<0.5.0+>",
-              "JSON::Fast"
-          ]
-      },
-      "test" : {
-          "requires": [
-              "CSS::Writer:ver<0.3.0+>"
-          ]
-      }
+    "runtime": {
+      "requires": [
+        "CSS::Grammar:ver<0.5.0+>",
+        "JSON::Fast"
+      ]
+    },
+    "test": {
+      "requires": [
+        "CSS::Writer:ver<0.3.0+>"
+      ]
+    }
   },
   "description": "CSS3 Level 3 Selectors",
   "license": "Artistic-2.0",
@@ -26,8 +28,10 @@
   },
   "resources": [
   ],
-  "source-url": "git://github.com/css-raku/CSS-Module-CSS3-Selectors-raku.git",
+  "source-url": "https://github.com/css-raku/CSS-Module-CSS3-Selectors-raku.git",
   "tags": [
   ],
-  "version": "0.0.6"
+  "test-depends": [
+  ],
+  "version": "0.0.7"
 }
